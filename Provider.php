@@ -16,7 +16,7 @@ class Provider extends AbstractProvider
      * {@inheritdoc}
      * https://docs.microsoft.com/fr-fr/windows-server/identity/ad-fs/development/ad-fs-openid-connect-oauth-concepts.
      */
-    protected $scopes = ['User.Read'];
+    protected $scopes = ['openid'];
 
     /**
      * {@inheritdoc}
