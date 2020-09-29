@@ -4,6 +4,9 @@
     "license": "MIT",
     "authors": [
         {
+            "name": "Vincent Demonchy",
+            "email": "demonchy@kizeo.com"
+        }, {
             "name": "Brian Faust",
             "email": "hello@brianfaust.de"
         }
