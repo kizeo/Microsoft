@@ -15,7 +15,7 @@ Please see the [Base Installation Guide](https://socialiteproviders.com/usage/),
   'client_id' => env('MICROSOFTADFS_CLIENT_ID'),  
   'client_secret' => env('MICROSOFTADFS_CLIENT_SECRET'),  
   'redirect' => env('MICROSOFTADFS_REDIRECT_URI'), 
-  'bas_uri' => env('MICROSOFTADFS_REDIRECT_URI') 
+  'base_uri' => env('MICROSOFTADFS_REDIRECT_URI') 
 ],
 ```
 
