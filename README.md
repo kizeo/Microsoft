@@ -1,7 +1,7 @@
 # Microsoft
 
 ```bash
-composer require socialiteproviders/microsoft
+composer require kizeo/socialiteprovidersmicrosoft
 ```
 
 ## Installation & Basic Usage
@@ -11,10 +11,11 @@ Please see the [Base Installation Guide](https://socialiteproviders.com/usage/),
 ### Add configuration to `config/services.php`
 
 ```php
-'microsoft' => [    
-  'client_id' => env('MICROSOFT_CLIENT_ID'),  
-  'client_secret' => env('MICROSOFT_CLIENT_SECRET'),  
-  'redirect' => env('MICROSOFT_REDIRECT_URI') 
+'microsoftadfs' => [    
+  'client_id' => env('MICROSOFTADFS_CLIENT_ID'),  
+  'client_secret' => env('MICROSOFTADFS_CLIENT_SECRET'),  
+  'redirect' => env('MICROSOFTADFS_REDIRECT_URI'), 
+  'bas_uri' => env('MICROSOFTADFS_REDIRECT_URI') 
 ],
 ```
 
@@ -28,7 +29,7 @@ Add the event to your `listen[]` array in `app/Providers/EventServiceProvider`. 
 protected $listen = [
     \SocialiteProviders\Manager\SocialiteWasCalled::class => [
         // ... other providers
-        'SocialiteProviders\\Microsoft\\MicrosoftExtendSocialite@handle',
+        'Kizeo\\ADFSSocialite\\MicrosoftADFSExtendSocialite@handle',
     ],
 ];
 ```
@@ -38,5 +39,5 @@ protected $listen = [
 You should now be able to use the provider like you would regularly use Socialite (assuming you have the facade installed):
 
 ```php
-return Socialite::driver('microsoft')->redirect();
+return Socialite::driver('microsoftadfs')->redirect();
 ```
