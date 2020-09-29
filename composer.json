@@ -1,14 +1,11 @@
 {
     "name": "kizeo/socialiteprovidersmicrosoft",
-    "description": "Microsoft and ADFS OAuth2 Provider for Laravel Socialite (customized by Kizeo)",
+    "description": "ADFS OAuth2 Provider for Laravel Socialite",
     "license": "MIT",
     "authors": [
         {
             "name": "Vincent Demonchy",
             "email": "demonchy@kizeo.com"
-        }, {
-            "name": "Brian Faust",
-            "email": "hello@brianfaust.de"
         }
     ],
     "require": {
@@ -18,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SocialiteProviders\\Microsoft\\": ""
+            "Kizeo\\ADFSSocialite\\": ""
         }
     }
 }
