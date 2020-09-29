@@ -107,6 +107,6 @@ class Provider extends AbstractProvider
      */
     public static function additionalConfigKeys()
     {
-        return ['tenant'];
+        return ['base_uri'];
     }
 }
