@@ -31,7 +31,7 @@ class Provider extends AbstractProvider
         return
             $this->buildAuthUrlFromBase(
                 sprintf(
-                    '%s/oauth2/v2.0/authorize',
+                    '%s/oauth2/authorize',
                     $this->config['base_uri']
                 ),
                 $state
@@ -44,7 +44,7 @@ class Provider extends AbstractProvider
      */
     protected function getTokenUrl()
     {
-        return sprintf('%s/oauth2/v2.0/token', $this->config['base_uri']);
+        return sprintf('%s/oauth2/token', $this->config['base_uri']);
     }
 
     /**
