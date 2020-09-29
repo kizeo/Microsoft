@@ -1,6 +1,6 @@
 {
-    "name": "socialiteproviders/microsoft",
-    "description": "Microsoft OAuth2 Provider for Laravel Socialite",
+    "name": "kizeo/socialiteprovidersmicrosoft",
+    "description": "Microsoft and ADFS OAuth2 Provider for Laravel Socialite (customized by Kizeo)",
     "license": "MIT",
     "authors": [
         {
