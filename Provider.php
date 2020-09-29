@@ -40,7 +40,7 @@ class Provider extends AbstractProvider
 
     /**
      * {@inheritdoc}
-     * https://docs.microsoft.com/fr-fr/windows-server/identity/ad-fs/development/ad-fs-openid-connect-oauth-concepts.
+     * https://docs.microsoft.com/fr-fr/windows-server/identity/ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios#client-credentials-grant-flow.
      */
     protected function getTokenUrl()
     {
