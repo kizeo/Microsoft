@@ -1,10 +1,10 @@
 <?php
 
-namespace SocialiteProviders\Microsoft;
+namespace Kizeo\ADFSSocialite;
 
 use SocialiteProviders\Manager\SocialiteWasCalled;
 
-class MicrosoftExtendSocialite
+class MicrosoftADFSExtendSocialite
 {
     /**
      * Register the provider.
@@ -13,6 +13,6 @@ class MicrosoftExtendSocialite
      */
     public function handle(SocialiteWasCalled $socialiteWasCalled)
     {
-        $socialiteWasCalled->extendSocialite('microsoft', Provider::class);
+        $socialiteWasCalled->extendSocialite('microsoftadfs', Provider::class);
     }
 }

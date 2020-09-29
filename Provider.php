@@ -1,20 +1,20 @@
 <?php
 
-namespace SocialiteProviders\Microsoft;
+namespace Kizeo\ADFSSocialite;
 
 use SocialiteProviders\Manager\OAuth2\AbstractProvider;
-use SocialiteProviders\Microsoft\MicrosoftUser as User;
+use Kizeo\ADFSSocialite\MicrosoftUser as User;
 
 class Provider extends AbstractProvider
 {
     /**
      * Unique Provider Identifier.
      */
-    public const IDENTIFIER = 'MICROSOFT';
+    public const IDENTIFIER = 'MICROSOFTADFS';
 
     /**
      * {@inheritdoc}
-     * https://msdn.microsoft.com/en-us/library/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes.
+     * https://docs.microsoft.com/fr-fr/windows-server/identity/ad-fs/development/ad-fs-openid-connect-oauth-concepts.
      */
     protected $scopes = ['User.Read'];
 
@@ -31,8 +31,8 @@ class Provider extends AbstractProvider
         return
             $this->buildAuthUrlFromBase(
                 sprintf(
-                    'https://login.microsoftonline.com/%s/oauth2/v2.0/authorize',
-                    $this->config['tenant'] ?: 'common'
+                    '%s/oauth2/v2.0/authorize',
+                    $this->config['base_uri']
                 ),
                 $state
             );
@@ -40,11 +40,11 @@ class Provider extends AbstractProvider
 
     /**
      * {@inheritdoc}
-     * https://developer.microsoft.com/en-us/graph/docs/concepts/use_the_api.
+     * https://docs.microsoft.com/fr-fr/windows-server/identity/ad-fs/development/ad-fs-openid-connect-oauth-concepts.
      */
     protected function getTokenUrl()
     {
-        return sprintf('https://login.microsoftonline.com/%s/oauth2/v2.0/token', $this->config['tenant'] ?: 'common');
+        return sprintf('%s/oauth2/v2.0/token', $this->config['base_uri']);
     }
 
     /**
@@ -53,7 +53,7 @@ class Provider extends AbstractProvider
     protected function getUserByToken($token)
     {
         $response = $this->getHttpClient()->get(
-            'https://graph.microsoft.com/v1.0/me',
+            sprintf('%s/userinfo', $this->config['base_uri']),
             [
                 'headers' => [
                     'Accept'        => 'application/json',
